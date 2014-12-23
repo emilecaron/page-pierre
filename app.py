@@ -7,7 +7,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def root():
-    return render_template('index.html')
+    context = {
+        'image_url': 'https://media.joomeo.com/large/5499d3cdf34bd.jpg'
+    }
+    return render_template('index.html', **context)
 
 
 if __name__ == '__main__':
