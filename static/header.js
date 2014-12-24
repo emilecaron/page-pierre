@@ -5,9 +5,13 @@
 adjustHeaderSize = function(){
     console.log('hello');
 
+    // Compute logo size
+    var _size = 100 - $('body').scrollTop()/2;
+    var logoSize = (_size > 40)? _size: 40;
+    console.log(logoSize);
+
     // Compute new widths
     var leftWidth = 100;
-    var logoSize = 100;
     var rightWidth = $(window).width() - leftWidth - logoSize;
 
     // Apply width to elements
