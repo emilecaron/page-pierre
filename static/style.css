@@ -4,13 +4,7 @@
 
 *{
 	margin:0%;
-	padding:0%;}
-
-
-body{
-	width:100%;
-	height:100%;
-
+	padding:0%;
 }
 
 .page{
@@ -22,33 +16,17 @@ body{
 
 #header{
 	width:100%;
-	height:100px;
 }
 
 .header-background{
-	background-color: #29235c;
-}
-
-.header-left{
-	display: inline-block;
 	float:left;
 	height:100%;
-
-}
-
-.header-right{
-	display: inline-block;
-	float:right;
-	height:100%;
+	background-color: #29235c;
 }
 	
 #header-logo{
-	display: inline-block;
 	float:left;
 	background-image:url(logo.svg);
-	width:100px;
-	height:100%;
-	min-height:100%;
 	background-size:100px 100px;
 	background-position:center;
 	background-repeat:no-repeat;
@@ -76,4 +54,4 @@ body{
 	height:auto;
 	right:0%;
 	background-color:#C83032
-	}
+}

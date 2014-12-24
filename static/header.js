@@ -1,19 +1,33 @@
 /*
-    Header elements width
+    Header Size
 */
 
-adjustWidth = function(){
+adjustHeaderSize = function(){
     console.log('hello');
 
-    $('.header-left').width(100);
-    $('.header-right').width( $(window).width() - 200);
+    // Compute new widths
+    var leftWidth = 100;
+    var logoSize = 100;
+    var rightWidth = $(window).width() - leftWidth - logoSize;
+
+    // Apply width to elements
+    $('#header-left').width(leftWidth);
+    $('#header-logo').width(logoSize);
+    $('#header-right').width(rightWidth);
+
+    // Apply height to logo and header
+    $('#header').height(logoSize);
+    $('#header-logo').height(logoSize);
 };
 
 
 $(function(){
     console.log('header.js loaded');
+
+    // Set initial header size
+    adjustHeaderSize();
     
     // Bind functions to resize/scroll events
-    $(window).resize(adjustWidth);
-    $(window).scroll(adjustWidth);
+    $(window).resize(adjustHeaderSize);
+    $(window).scroll(adjustHeaderSize);
 });
