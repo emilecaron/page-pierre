@@ -40,14 +40,22 @@ var displayAllFirstImages = function() {
 
 var toggleArticleSize = function(e){
 
-    var article = $($(e.target).parent());
+    var article = $(e.currentTarget);
 
-    var properties = (article.hasClass('maximized'))? 
-        {width: '300px', height: '200px'}:
-        {width: '600px', height: '400px'};
-    
+    // Maximize and minimize ratios
+    var ratio = (article.hasClass('maximized'))? 0.5: 2;
+
+    // Prepare transformation parameters
+    var properties = {
+        width: article.width() * ratio,
+        height: article.height() * ratio
+    };
     var options = {duration: 200};
 
+    // Reduce all other maximized articles
+    // SOON
+
+    // Apply transformation to article and images
     article.animate(properties, options).toggleClass('maximized');
     article.children('img').each(function(_, img) {$(img).animate(properties, options);});
 
@@ -59,5 +67,5 @@ $(function(){
     // Bind photo display to hover events
     $('.article').mousemove(displayCorrectPicture);
 
-    $('img').click(toggleArticleSize);
+    $('.article').click(toggleArticleSize);
 });
