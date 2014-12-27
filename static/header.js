@@ -2,16 +2,15 @@
     Header Size
 */
 
-adjustHeaderSize = function(){
-    console.log('hello');
+adjustHeaderSize = function(e){
 
     // Compute logo size
     var _size = 100 - $('body').scrollTop()/2;
     var logoSize = Math.max(_size, 40);
-    console.log(logoSize);
 
     // Compute new widths
-    var leftWidth = 100;
+    var leftWidth = (e && e.type === 'mousemove')? e.screenX - (logoSize / 2): $('#header-left').width();
+    leftWidth = Math.max(0, Math.min(leftWidth, $(window).width() - logoSize))
     var rightWidth = $(window).width() - leftWidth - logoSize;
 
     // Apply width to elements
@@ -34,6 +33,7 @@ $(function(){
     // Bind functions to resize/scroll events
     $(window).resize(adjustHeaderSize);
     $(window).scroll(adjustHeaderSize);
+    $('#header').mousemove(adjustHeaderSize);
 
     // Slide down the header
     $('#header').slideDown('slow', displayAllFirstImages);

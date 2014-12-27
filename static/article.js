@@ -14,14 +14,8 @@ var displayCorrectPicture = function(e) {
     // Save new active image
     article.attr('active-img', image);
 
-    // Remove active class from all pictures except the selected
-    /*
-    article.children('.photo-column.active').removeClass('active');
-    activeImage = article.children('.photo-column').get(image);
-    $(activeImage).addClass('active');
-    */
 
-    activeImage = article.children('.photo-column').get(image);
+    var activeImage = article.children('.photo-column').get(image);
     var previousActive = article.children('.photo-column.active');
     previousActive.removeClass('active');
     previousActive.fadeOut('slow');
