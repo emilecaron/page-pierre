@@ -36,5 +36,5 @@ $(function(){
     $(window).scroll(adjustHeaderSize);
 
     // Slide down the header
-    $('#header').slideDown('slow');
+    $('#header').slideDown('slow', displayAllFirstImages);
 });
