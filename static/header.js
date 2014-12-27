@@ -34,4 +34,7 @@ $(function(){
     // Bind functions to resize/scroll events
     $(window).resize(adjustHeaderSize);
     $(window).scroll(adjustHeaderSize);
+
+    // Slide down the header
+    $('#header').slideDown('slow');
 });

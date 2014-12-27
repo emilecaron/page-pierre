@@ -20,6 +20,9 @@
 	left:0;
 	width:100%;
 	z-index:1;
+    
+    /*Hide to slide down on start*/
+    display: none; 
 }
 
 .header-background{
@@ -48,22 +51,21 @@
 	width:300px;
 	height:200px;
 	margin-top:5%;
-	background-color:green;
-	display:inline-block;
+	/*
+    background-color:green;
+	*/
+    display:inline-block;
 	}
-
-#photo{
-	max-width:100%;
-	max-height:100%;
-}
 
 .photo-column{
     display: none;
-    float: left;
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    height: 200px;
+    width: 300px;
 }
 
 .photo-column.active{
+    /*
     display: block;
+    */
 }
