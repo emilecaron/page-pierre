@@ -19,6 +19,7 @@
 	top: 0;
 	left:0;
 	width:100%;
+	z-index:1;
 }
 
 .header-background{
@@ -37,9 +38,9 @@
 		
 #grille{
 	margin-top:100px;
-	margin-left:15%;
-	margin-right:15%;
-	width:70%;
+	margin-left:5%;
+	margin-right:5%;
+	width:90%;
 	height:100%;
 	}
 	
@@ -49,9 +50,22 @@
 	margin-top:5%;
 	background-color:green;
 	display:inline-block;
-}
+	}
 
 #photo{
 	max-width:100%;
 	max-height:100%;
 }
+
+
+#hasard{
+	background-color:red;
+	background-size: 300px 200px;
+	/*position: relative;*/
+	margin-top:5%;
+	width:300px;
+	height:200px;
+	float:right;
+	z-index: 0
+}
+	
