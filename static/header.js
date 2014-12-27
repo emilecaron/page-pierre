@@ -7,7 +7,7 @@ adjustHeaderSize = function(){
 
     // Compute logo size
     var _size = 100 - $('body').scrollTop()/2;
-    var logoSize = (_size > 40)? _size: 40;
+    var logoSize = Math.max(_size, 40);
     console.log(logoSize);
 
     // Compute new widths

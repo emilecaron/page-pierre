@@ -1,9 +1,25 @@
-Name1
-url1
-url2
-url3
+#######################################################################
+# This file describes the articles to display on the page             #
+#                                                                     #
+# Every article begins with a name (useless for now)                  #
+# Then one or more urls                                               #
+# Then an empty line (or end of file)                                 #
+#                                                                     #
+# You can put more than one url on a line by using '|'                #
+# One of the urls will be randomly selected                           #
+#                                                                     #
+# If a line begins with '#' it's a comment                            #
+####################################################################### 
 
-Name2
-url1b
-url2b
-url3b
+Article
+https://media.joomeo.com/large/5499d3cdf34bd.jpg | https://media.joomeo.com/large/5499d3e751a14.jpg
+https://media.joomeo.com/large/5499d3fc3e8b2.jpg
+
+Double Article
+https://media.joomeo.com/large/5499d3e751a14.jpg
+https://media.joomeo.com/large/5499d3fc3e8b2.jpg
+
+Triple Article
+https://media.joomeo.com/large/5499d4178281d.jpg
+https://media.joomeo.com/large/5499d43e104f2.jpg
+https://media.joomeo.com/large/5499d3e751a14.jpg
