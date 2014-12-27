@@ -39,6 +39,7 @@ var displayAllFirstImages = function() {
 };
 
 var toggleArticleSize = function(e){
+    console.log(e);
 
     var article = $(e.currentTarget);
 
@@ -52,8 +53,9 @@ var toggleArticleSize = function(e){
     };
     var options = {duration: 200};
 
-    // Reduce all other maximized articles
-    // SOON
+    // Reduce all other maximized articles to only have one
+    if (!article.hasClass('maximized'))
+        $('.maximized').trigger($.Event('click'));
 
     // Apply transformation to article and images
     article.animate(properties, options).toggleClass('maximized');
