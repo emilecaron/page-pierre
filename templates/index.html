@@ -8,7 +8,7 @@
 
 <body>
   <div class="page" >
-    
+ 
     <header>
       <div id="header">
         <div id="header-left" class="header-background"></div>
@@ -21,20 +21,20 @@
 
 
     <div id="grille">
-    
+ 
       {% for article in articles %}
       <div class="article" splits="{{ article.urls|count }}">
+
             {% for url in article.urls %}
                 <img class="photo-column" src="{{ url }}">
             {% endfor %}
-          </div>
+      </div>
       {% endfor %}
       
     </div>
   
   </div>
 
-  
   <script src="{{ url_for('static', filename='jquery-2.1.3.js') }}"></script>
   <script src="{{ url_for('static', filename='header.js') }}"></script>
   <script src="{{ url_for('static', filename='article.js') }}"></script>
