@@ -33,7 +33,10 @@ var displayAllFirstImages = function() {
 };
 
 var toggleArticleSize = function(e){
-    console.log(e);
+    /*
+     *  Toggle article to maximized size
+     *  Makes it twice bigger/smaller using an animation
+     */
 
     var article = $(e.currentTarget);
 
@@ -57,11 +60,30 @@ var toggleArticleSize = function(e){
 
 };
 
+var setArticleSize = function(ratio){
+    /*
+     *  Resize all articles/images using the given ratio
+     *  newWidth = window.articleWidth0 * ratio
+     */
+    console.log('resizing ' + ratio);
+
+    $('.article').width(window.articleWidth0 * ratio);
+    $('.article img').width(window.articleWidth0 * ratio);
+    $('.article').height(window.articleHeight0 * ratio);
+    $('.article img').height(window.articleHeight0 * ratio);
+    
+};
+
 $(function(){
     console.log('article.js loaded');
+    
+    // Save initial article size
+    window.articleWidth0 = $('.article').first().width()
+    window.articleHeight0 = $('.article').first().height()
 
     // Bind photo display to hover events
     $('.article').mousemove(displayCorrectPicture);
 
+    // Bind article click to toggle resize
     $('.article').click(toggleArticleSize);
 });

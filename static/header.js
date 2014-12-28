@@ -3,6 +3,7 @@
 */
 
 adjustHeaderSize = function(e){
+    var windowW = $(window).width(); 
 
     // Compute logo size
     var _size = 100 - $('body').scrollTop()/2;
@@ -10,8 +11,8 @@ adjustHeaderSize = function(e){
 
     // Compute new widths
     var leftWidth = (e && e.type === 'mousemove')? e.screenX - (logoSize / 2): $('#header-left').width();
-    leftWidth = Math.max(0, Math.min(leftWidth, $(window).width() - logoSize))
-    var rightWidth = $(window).width() - leftWidth - logoSize;
+    leftWidth = Math.max(0, Math.min(leftWidth, windowW - logoSize))
+    var rightWidth = windowW - leftWidth - logoSize;
 
     // Apply width to elements
     $('#header-left').width(leftWidth);
@@ -21,6 +22,9 @@ adjustHeaderSize = function(e){
     // Apply height to logo and header
     $('#header').height(logoSize);
     $('#header-logo').height(logoSize);
+
+    // Trigger Image resize
+    setArticleSize( 1 + (leftWidth / windowW));
 };
 
 
