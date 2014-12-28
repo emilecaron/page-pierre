@@ -17,13 +17,10 @@
       </div>
     </header>
 
-
-
-
     <div id="grille">
  
       {% for article in articles %}
-      <div class="article" splits="{{ article.urls|count }}">
+      <div class="article" splits="{{ article.urls|count }}" artid="{{ article.aid }}">
 
             {% for url in article.urls %}
                 <img class="photo-column" src="{{ url }}">

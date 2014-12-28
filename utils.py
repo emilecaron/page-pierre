@@ -17,12 +17,38 @@ class Parser(object):
     link2
 
     """
+    def __init__(self, filename):
+        self.articles = self.parse_file(filename)
+
+    def get_index_articles(self):
+        '''
+        get all articles with only urls that begin with * 
+        '''
+        for art in self.articles:
+            index_urls = [url[1:] for url in art['urls'] if url.startswith('*')] 
+
+            # Set default images for articles that don't have any
+            index_urls = index_urls or list('static/just_grey.jpg')
+
+            art.update(dict(urls=index_urls))
+
+            print(art)
+            yield art
+
+    def get_article(self, aid):
+        '''
+        Get one article selected by id
+        '''
+        for art in self.articles:
+            if art['aid'] == aid:
+                art['urls'] = [u.replace('*','') for u in art['urls']]
+                return art
 
     def parse_file(self, filename):
         '''
         Yield article_data dicts
         '''
-        
+        _id = 0 
         with open(filename, 'r') as f:
             article = None
             urls = []
@@ -44,8 +70,9 @@ class Parser(object):
                 if not article: 
                     continue
 
-                yield dict(article=article, urls=urls)
-                
+                yield dict(article=article, urls=urls, aid=_id)
+
+                _id += 1
                 article = ''
                 urls = []
 
