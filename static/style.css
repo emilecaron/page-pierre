@@ -7,6 +7,13 @@
 	padding:0%;
 }
 
+
+
+body{
+	background-image:url(bruit.jpg);
+	background-repeat:repeat;
+}
+
 .page{
 	margin-top: 100px;
 	width: 100%;
